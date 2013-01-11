@@ -1,0 +1,84 @@
+\subsection{Quantum Chromodynamics}
+\label{sec:qcd}
+
+% gluon -> charge
+% no colored object
+% asymptotic freedom
+Quantum Chromodynamics (QCD)  is the theory that governs the strong nuclear interactions and thus describes the interactions of quarks and gluons. 
+Similar to the theories previously discussed, QCD is a quantum field theory, except that the symmetry is $SU(3)$.
+The consequence of the symmetry group leads to a total of three color charges which are defined as red, green and blue.
+Unlike the theory of QED, QCD is a non-Abelian gauge theory, which has the effect that gluons carry a color charge. 
+Since the gluons carry a color charge, this means that a gluon can interact with other gluons.
+QCD is invariant under color transformations yielding the consequence that composite objects (i.e. any observable particle) must carry no net color charge.
+Quarks as well as gluons carry a color charge, thus bare quarks can not exist alone, leading to the concept of color confinement.
+Color confinement can be described by examining an attempt to pull two quarks apart from each other. 
+As the distance between the quarks increases, the energy of the system also increases.
+As the energy increases it eventually becomes energetically favorable to create two additional quarks from the vacuum which then bind to the original quarks in question, creating two color neutral hadrons.
+
+The QCD Lagrangian is given by:
+\begin{equation}
+\Lagr_{QCD} = -\frac{1}{4}F_{\mu\nu}^{a}F^{\mu\nu a} + i\sum_{q}\psibar_{q}^{i}\gamma^{\mu}(D_{\mu})_{ij}\psi_{q}^{j} - \sum_{q}m_{q}\psibar_{q}^{i}\psi_{qi}, 
+\end{equation}
+where $\psi$ is the 4-component Dirac spinor for the quark field, and are summed over the colors $i$ and the flavors $q$.
+By examining this Lagrangian, the points made in the preceding paragraph are enumerated.
+The first term represents the kinetic energy of the gluon, similar to that for the photon in Equation \ref{eqn:qedlagrangian}.
+The second term represents the interaction between quarks and gluons as well as the kinetic energy of the quarks, while the third term represents the mass of the quarks.
+Although similar to the kinetic term of QED, due to the $SU(3)$ symmetry group of QCD, the free field QCD term yields eight gluon fields.
+The free field QCD term is:
+\begin{equation}
+F_{\mu\nu}^{a} = \partial_{\mu}A_{\nu}^{a} - \partial_{\nu}A_{\mu}^{a} - g_{s}f_{abc}A_{\mu}^{b}A_{\nu}^{c},
+\label{eqn:qcdfreefield}
+\end{equation}
+where $f_{abc}$ are the structure constants of the $SU(3)$ algebra, playing a similar role to the Pauli spin matrices.
+In Equation \ref{eqn:qcdfreefield}, $A_{\mu}^{a}$ are the gluon fields, and $g_{s}$ is the strong coupling constant.
+The third term in Equation \ref{eqn:qcdfreefield} demonstrates the self interaction of the gluon fields.
+
+For the purposes of this analysis, the primary consequence of the QCD theory is that of color confinement.
+In practice, when a quark is produced in a high-energy collision, as it travels away from the interaction it will hadronize.
+This hadronization process will result in a spray of hadrons that are produced surrounding the initial quark.
+In executing an experimental high energy physics analysis, one does not observe quarks directly, but rather observes a ``jet'' of hadrons that result from the hadronization process.
+The jet will contain numerous charged and neutral hadrons, primarily pions. 
+%Heavier hadrons however, can arise and often lead to jet sub-structure.
+Finally, QCD processes typically have cross sections many orders of magnitude larger than other processes, and thus can contribute large unwanted backgrounds to an analysis. 
+
+
+%\begin{figure}
+%\begin{center}
+%\begin{fmffile}{firstorderqcd} 	%one.mf will be created for this feynman diagram  
+%\fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+%\begin{fmfgraph*}(110,62) %Sets size of Diagram
+%\fmfleft{i2,i1}	%Sets there to be 2 sources 
+%\fmfright{o2,o1}    %Sets there to be 2  outputs
+%\fmflabel{$u$}{i1} %Labels one of the left sources
+%\fmflabel{$d$}{i2} %Labels one of the left sources
+%\fmflabel{$d$}{o2} %Labels one of the right outputs
+%\fmflabel{$u$}{o1} %Labels one of the right outputs
+%\fmf{fermion}{i1,v1,o1} %Connects the sources with a vertex.
+%\fmf{fermion}{i2,v2,o2} %Connects the sources with a vertex.
+%\fmf{gluon}{v1,v2}
+%\end{fmfgraph*}
+%}
+%\end{fmffile}
+%\end{center}
+%\end{figure}
+
+%\begin{figure}
+%\begin{center}
+%\begin{fmffile}{higherorderqcd} 	%one.mf will be created for this feynman diagram  
+%\fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+%\begin{fmfgraph*}(110,62) %Sets size of Diagram
+%\fmfleft{id,iu}
+%\fmf{fermion}{id,vdg1,vdg2,vdg3,vdg4,od}
+%\fmf{fermion}{iu,vug1,vug2,ou}
+%\fmf{gluon,right=.5,tension=.1}{vdg1,vdg4}
+%\fmf{gluon,tension=.1}{vdg2,vug1}
+%\fmf{gluon,tension=.1}{vdg3,vug2}
+%\fmfright{od,ou}
+%\end{fmfgraph*}
+%}
+%\end{fmffile}
+%\end{center}
+%\caption{QCD}
+%\end{figure}
+
+

@@ -1,0 +1,144 @@
+\subsection{Spontaneous Symmetry Breaking}
+\label{sec:breaking}
+Thus far the three primary symmetries of the standard model have been described, however they remain as separate entities.
+At the beginning of the chapter it was mentioned that a goal of modern particle physics is to unify the three interactions. 
+Thus far the electromagnetic and weak interactions have been successfully unified.
+The process by which these interactions have been unified is through spontaneous symmetry breaking and the Higgs mechanism.
+Spontaneous symmetry breaking is the process by which the vacuum expectation value (VEV) or ground state of the Lagrangian is not symmetric, but the original symmetry is still valid.
+In this way the symmetry still exists, but is hidden and the effective Lagrangian does not obey the symmetry.
+A simple example of spontaneous symmetry breaking is first presented, and then this process is extended to explain the phenomenology of electroweak unification and its implications.
+
+Consider a scalar field $\phi$ that couples to itself and exhibits a  $U(1)$ symmetry that is invariant under local gauge transformations.
+The Lagrangian for this system is described by
+\begin{equation}
+\label{eqn:u1lagrangian}
+\Lagr = -\frac{1}{4}(F_{\mu\nu})^{2} + |D_{\mu}\phi|^{2} - V(\phi),
+\end{equation}
+and is invariant under the local transformations, 
+\begin{equation}
+\begin{array}{rcl}
+\phi(x)    & \rightarrow & e^{i\alpha(x)}\phi(x), \\
+A_{\mu}(x) & \rightarrow & A_{\mu}(x) - \frac{1}{e}\partial_{\mu}\alpha(x).
+\end{array}
+\end{equation}
+If the potential in Equation \ref{eqn:u1lagrangian} is taken to be of the form 
+\begin{equation}
+V(\phi) = -\mu^{2}\phi^{*}\phi + \frac{\lambda}{2}(\phi^{*}\phi)^{2},
+\end{equation}
+with $\mu^{2} > 0$, the field will acquire a non-zero expectation value.
+The Lagrangian is considered to be spontaneously broken as the Lagrangian is no longer symmetric about the ground state.
+In this case the minimum of the potential is
+\begin{equation}
+\langle\phi\rangle = \phi_{0} = \left(\frac{\mu^{2}}{\lambda}\right)^{1/2}.
+\end{equation}
+If the Lagrangian is expanded about the ground state, or vacuum state, the field $\phi(x)$ can be expressed as a real and imaginary part consisting of two real fields $\phi_{1}$ and $\phi_{2}$,
+\begin{equation}
+\phi(x) = \phi_{0} + \frac{1}{\sqrt{2}}\left(\phi_{1}(x) + i\phi_{2}(x)\right).
+\end{equation}
+The potential can then be expressed as:
+\begin{equation}
+V(\phi) = -\frac{1}{2\lambda}\mu^{4} + \onehalf 2\mu^{2}\phi_{1}^{2} + \mathcal{O}(\phi_{i}^{3}),
+\end{equation}
+and one can see that the field $\phi_{1}$ has acquired a mass, $m^{2} = 2\mu^{2}$.
+The kinetic term of the field can be expressed in the following form
+\begin{equation}
+|D_{\mu}|^{2} = \frac{1}{2}(\partial_{\mu}\phi_{1})^{2} + \frac{1}{2}(\partial_{\mu}\phi_{2})^{2} + \sqrt{2}e\phi_{0}A_{\mu}\partial^{\mu}\phi_{2} + e^{2}\phi_{0}^{2}A_{\mu}A^{\mu} + \cdots,
+\end{equation}
+and we see that the previously massless gauge boson in the model has acquired a mass.
+The mass term 
+\begin{equation}
+\Delta\Lagr = \frac{1}{2}m_{A}^{2}A_{\mu}A^{\mu},
+\end{equation}
+shows that the gauge boson acquires a mass, $m^{2} = 2e^{2}\phi_{0}^{2}$.
+
+\subsection{Electroweak Unification}
+\label{sec:electroweak}
+A similar treatment to that shown in Section \ref{sec:breaking} can be performed in order to unify the electromagnetic and weak interactions.
+Rather than a $U(1)$ symmetry as discussed previously, electroweak unification begins with a scalar field in the spinor representation of $SU(2)$.
+The symmetry considered is a gauge symmetry of $SU(2)_{L}$ as it has been observed that the weak interaction couples only to left handed fermions, with the addition of a $U(1)$ symmetry of hypercharge $Y$ specified as $U(1)_{Y}$.
+The additional $U(1)_{Y}$ symmetry is needed due to the fact that if only the $SU(2)_{L}$ symmetry were taken, there would be only three massive gauge bosons in the broken symmetry, and as such the photon would not exist.
+The gauge transformation of the scalar field is 
+\begin{equation}
+\phi \rightarrow e^{i\alpha^{a}\tau^{a}}e^{i\beta/2}\phi,
+\end{equation}
+while the covariant derivative is
+\begin{equation}
+\label{eqn:higgsderivative}
+D_{\mu}\phi = (\partial_{\mu} - igW_{\mu}^{a}\tau^{a} - \frac{i}{2}g^{\prime}B_{\mu})\phi,
+\end{equation}
+where $g$ and $g^{\prime}$ are the coupling strengths of the $SU(2)_L$ and $U(1)_{Y}$ symmetries respectively.
+In the previous two equations $\tau^{a} = \sigma^{a}/2$, where $\sigma^{a}$ represents the Pauli matrices.
+In Equation \ref{eqn:higgsderivative}, $W_{\mu}$ represents the gauge fields of the $SU(2)_L$ symmetry while $B_{\mu}$ represents the gauge field of the $U(1)_{Y}$ symmetry.
+The scalar field acquires a vacuum expectation value, 
+\begin{equation}
+\langle\phi\rangle = \frac{1}{\sqrt{2}}\begin{pmatrix}0 \\ v\end{pmatrix},
+\end{equation}
+which indeed yields three massive gauge bosons and a single massless gauge boson as observed in the SM.
+The mass spectrum of the gauge bosons follows from the kinetic term of the field, which evaluated at the vacuum expectation value (VEV) is 
+\begin{equation}
+\label{eqn:higgsmassterms}
+\Delta\Lagr = \frac{1}{2}\frac{v^{2}}{4} \left[ g^{2}(W^{1}_{\mu})^{2} + g^{2}(W_{\mu}^{2})^{2} + (-gW_{\mu}^{3} + g^{\prime}B_{\mu})^{2} \right].
+\end{equation}
+Equation \ref{eqn:higgsmassterms} will produce the three massive gauge bosons in the theory of weak interactions via a change of basis from the electroweak $SU(2)_L \times U(1)_{Y}$ symmetry.
+The weak gauge bosons and their masses are derived to be,
+\begin{equation}
+\begin{array}{rclrcl}
+W_{\mu}^{\pm} & = & \frac{1}{\sqrt{2}}(W_{\mu}^{1} \mp iW_{\mu}^{2}),                        & m_{W} & = & g\frac{v}{2}, \\
+Z_{\mu}^{0}   & = & \frac{1}{\sqrt{g^{2} + g^{\prime 2}}}(gW_{\mu}^{3} - g^{\prime}B_{\mu}), & m_{Z} & = & \sqrt{g^{2} + g^{\prime 2}}\frac{v}{2}.
+\end{array}
+\end{equation}
+The electromagnetic charge quantum number is recovered via the transformation 
+\begin{equation}
+Q = W^{3} + Y,
+\end{equation}
+leading to the massless photon of QED:
+\begin{equation}
+A_{\mu} = \frac{1}{\sqrt{g^{2} + g^{\prime 2}}}(g^{\prime} W_{\mu}^{3} + gB_{\mu}).
+\end{equation}
+It is then useful to represent the change of basis from $(T^3, B)$ to $(Z^{0},A)$ using the weak mixing angle ($\theta_{w}$) with the rotation matrix shown in
+\begin{equation}
+\label{eqn:weakmixing}
+\begin{pmatrix}Z^{0} \\ A \end{pmatrix} = \begin{pmatrix}cos\theta_{w} & -sin\theta_{w} \\ sin\theta_{w} & cos\theta_{w}\end{pmatrix}\begin{pmatrix}W^3 \\ B\end{pmatrix}.
+\end{equation}
+With the representation in Equation \ref{eqn:weakmixing}, one can express the relationship between the coupling $g$ and the electric charge $e$ as
+\begin{equation}
+g = \frac{e}{sin\theta_{w}}.
+\end{equation}
+This provides a relationship between the $W^{\pm}$ mass ($m_{W}$) and the $Z^{0}$ mass ($m_{Z}$) of
+\begin{equation}
+m_{W} = m_{Z}cos\theta_{w}.
+\end{equation}
+
+Thus electroweak unification and the Higgs mechanism has successfully described the process by which the massive gauge bosons of the weak interaction acquire their mass.
+In the framework of electroweak symmetry breaking $W$ bosons only couple to left handed fermions, for this reason left handed fermions are assigned to $SU(2)_L$ doublets while right handed fermions are singlets in the group.
+To take the electron as an example the $SU(2)_L$ doublet is
+\begin{equation}
+E_{L} = \begin{pmatrix}\nu_{e} \\ e^{-}\end{pmatrix}_{L},
+\end{equation}
+while the right handed electron is $e_{R}$.
+One is then left with the problem of giving mass terms to the fermions of the standard model. 
+It is tempting to do this by simply assigning the mass terms via
+\begin{equation}
+\Delta\Lagr_{e} = -m_{e}(\overline{e}_{L}e_{R} + \overline{e}_{R}e_{L}).
+\end{equation}
+This would, however, break gauge invariance of the Lagrangian as the left and right handed fermions belong to different representations.
+Instead the scalar field that has been introduced can provide a solution.
+Because of the quantum numbers of the left handed fermion doublets, the right handed fermion singlet and the Higgs scalar field one can combine the three entities to produce mass terms of the form
+\begin{equation}
+\begin{array}{rcl}
+\Delta\Lagr_{e} & = & -y_{e}\overline{E}_{L}\phi e_{R} + h.c. \\
+\Delta\Lagr_{e} & = & -\frac{1}{\sqrt{2}}y_{e}v\overline{e}_{L} e_{R} + h.c. + \cdots.\\
+\end{array}
+\end{equation}
+where $y_{e}$ is the Yukawa coupling constant and is introduced to set the size of the mass.
+Without the Yukawa coupling constant one would expect that the mass of the fermions would all be on the order of the VEV, so it is required to recover experimental observations.
+The mass of the electron can then be expressed in terms of the Yukawa coupling constant and the VEV of the scalar field as
+\begin{equation}
+m_{e} = \frac{1}{\sqrt{2}}y_{e}v.
+\end{equation}
+A similar treatment can be applied to all fermions, with the exception that the Yukawa couplings will be different and must be dictated by the experimentally measured mass of the particle.
+
+Like in the example discussed in Section \ref{sec:breaking}, the scalar field acquires a mass, $m_{h} = \sqrt{2}\mu$.
+It should be noted however, that $\mu$ is not determined by the theory and is instead an input to the theory.
+This has the consequence that the Higgs mass is not constrained by theory and must be measured experimentally.
+One can, however, derive from theory that the Higgs mass should be on the order of the weak scale $\mathcal{O}(10^{2})$ \cite{PESKIN}. 

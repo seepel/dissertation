@@ -1,0 +1,7 @@
+% higgstrahlung.t1 -- generated automatically from higgstrahlung.log
+% Think twice before editing THIS file!
+\fmfL(54.99991,24.99995,t){$Z^{*}$}
+\fmfL(6.09583,-3.45575,rt){$q,e^{-}$}
+\fmfL(6.09583,65.45575,rb){$\overline {q},e^{+}$}
+\fmfL(103.90417,65.45575,lb){$H$}
+\fmfL(103.90417,-3.45575,lt){$Z$}

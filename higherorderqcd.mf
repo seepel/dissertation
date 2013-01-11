@@ -1,0 +1,23 @@
+% higherorderqcd.mf -- do not edit, generated automatically by dissertation.tex
+input feynmf
+require_RCS_revision "1.30";
+beginchar(1, 110*1.0pt#, 62*1.0pt#, 0);
+"feynmf: 1";
+LaTeX_unitlength:=1.0pt;
+subgraph (0, 0, w, h);
+vinit;
+pickup pencircle scaled thin;
+vleft (__id, __iu);
+vconnect ("fermion", __id, __vdg1, __vdg2, __vdg3, __vdg4, __od);
+vconnect ("fermion", __iu, __vug1, __vug2, __ou);
+vconnect ("gluon,right=.5,tension=.1", __vdg1, __vdg4);
+vconnect ("gluon,tension=.1", __vdg2, __vug1);
+vconnect ("gluon,tension=.1", __vdg3, __vug2);
+vright (__od, __ou);
+vfreeze;
+vdraw;
+endsubgraph;
+endchar;
+% the end.
+end.
+endinput;

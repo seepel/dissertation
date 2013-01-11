@@ -1,0 +1,6 @@
+% muondecay.t1 -- generated automatically from muondecay.log
+% Think twice before editing THIS file!
+\fmfL(-6,31,r){$\mu ^{-}$}
+\fmfL(103.90417,-3.45575,lt){$\nu _{\mu }$}
+\fmfL(116,31,l){$e^{-}$}
+\fmfL(103.90417,65.45575,lb){$\overline {\nu }_{e}$}

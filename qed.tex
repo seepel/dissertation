@@ -1,0 +1,68 @@
+\subsection{Quantum Electrodynamics}
+\label{sec:qed}
+QED is an Abelian gauge theory, meaning that it is invariant under local gauge transformations.
+The ``gauge field'' of the theory describes the interaction of particles in accordance with the electromagnetic force.
+QED has seen great success in predicting experimental results, and has in fact done so with phenomenal precision.
+
+The Dirac equation is a logical starting point for the explanation of QED. 
+It is a wave equation describing 1/2 spin particles.
+By incorporating the transformation,
+\begin{equation}
+\label{eqn:quantumderivative}
+p_{\mu} \rightarrow i\partial_{\mu},
+\end{equation}
+into the special relativistic energy/momentum relationship,
+\begin{equation}
+p^{\mu}p_{\mu} - m^{2} = 0,
+\end{equation}
+one can indeed derive a quantum mechanical equation compatible with special relativity, and this is the approach taken in the Klein-Gordon equation.
+Dirac, however, sought to solve this problem by deriving an equation that had a first order derivative in time, which led to:
+\begin{equation}
+\label{eqn:diracspecial}
+(\gamma^{\kappa}p_{\kappa} + m)(\gamma^{\mu}p_{\mu} -m) = 0.
+\end{equation}
+By substituting Equation \ref{eqn:quantumderivative} into one of the terms in Equation \ref{eqn:diracspecial}, one obtains the equation of motion for a spin 1/2 particle:
+\begin{equation}
+\label{eqn:diracmotion}
+i\gamma^{\mu}\partial_{\mu}\psi - m\psi = 0.
+\end{equation}
+In Equations \ref{eqn:diracspecial} and \ref{eqn:diracmotion}, $\gamma^{\mu}$ represents the set of four Dirac matrices specified using the Pauli matrices,
+%\begin{equation}
+%\begin{array}{rl}
+%\gamma^{0} = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 &0 \\ 0 & 0 & 0 & 1\end{pmatrix}, & \gamma^{1} = \begin{pmatrix} 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \\ 0 & -1 & 0 & 0 \\ -1 & 0 & 0 & 0\end{pmatrix}, \\
+%\gamma^{2} = \begin{pmatrix} 0 & 0 & 0 & -i \\ 0 & 0 & i & 0 \\ 0 & i & 0 & 0 \\ -i & 0 & 0 & 0\end{pmatrix}, & \gamma^{3} = \begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 \\ -1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0\end{pmatrix}, \\
+%\end{array}
+%\end{equation}
+and the solution $\psi$ is %a 1x4 (FIXME?)matrix 
+referred to as a Dirac spinor.
+
+The Lagrangian ($\Lagr$), resulting from the Dirac equation is
+\begin{equation}
+\label{eqn:globallagrangian}
+\Lagr = \overline{\psi}(i \gamma^{\mu}\partial_{\mu} - m)\psi
+\end{equation}
+and is invariant under the global gauge transformation
+\begin{equation}
+\label{eqn:globalinvariance}
+\psi^{\prime}  \rightarrow e^{i\theta}\psi,
+\end{equation}
+indicating that the global symmetry group is $U(1)$.
+Recall, however, that QED must be invariant under local gauge transformations.
+This would require the Lagrangian to be invariant under Equation \ref{eqn:globalinvariance} in the case that $\theta$ is a function of position ($\theta = \theta(x)$).
+Although $\partial_{\mu}$ commutes with a constant $\theta$ it does not commute with $\theta(x)$ leading to the following modification:
+\begin{equation}
+\partial_{\mu} \rightarrow D_{\mu} = \partial_{\mu} - ieA^{\mu}.
+\end{equation}
+This adds an additional term to the Lagrangian (Equation \ref{eqn:globallagrangian}) of the form $e\psibar\gamma^{\mu}\psi A_{\mu}$, which can be interpreted as the coupling of the gauge field with the fermion.
+The strength of this coupling is proportional to $e$, the electric charge, which recovers the observation that neutral particles do not interact electromagnetically.
+Additionally, this term has the added interpretation that the electromagnetic force between two charged particles is caused by the exchange of a gauge boson, in this case a photon.
+This does not complete the picture however, as there is no kinetic term for the photon. 
+Without a kinetic term, there is no room in the theory for photons to traverse space.
+The full QED Lagrangian is accomplished by adding this kinetic term using the field strength tensor:
+\begin{equation}
+\label{eqn:qedlagrangian}
+\Lagr = \psibar (i\gamma^{\mu}D_{\mu} - m)\psi - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+
+QED describes the electromagnetic force via the U(1) gauge symmetry, and successfully merges quantum mechanics with special relativity.
+The gauge group that QED belongs to dictates the behavior of the gauge boson, and how that boson interacts with other particles.

@@ -1,0 +1,29 @@
+% vectorbosonfusion.mf -- do not edit, generated automatically by dissertation.tex
+input feynmf
+require_RCS_revision "1.30";
+beginchar(1, 110*1.0pt#, 102*1.0pt#, 0);
+"feynmf: 1";
+LaTeX_unitlength:=1.0pt;
+subgraph (0, 0, w, h);
+vinit;
+pickup pencircle scaled thin;
+vtop (__iq1, __oq1);
+vbottom (__iq2, __oq2);
+vright (__H);
+vlabel ("$q$", __iq1);
+vlabel ("$q$", __oq1);
+vlabel ("$q^{\prime }$", __iq2);
+vlabel ("$q^{\prime }$", __oq2);
+vlabel ("$H$", __H);
+vconnect ("fermion,tension=2", __iq1, __v1, __oq1);
+vconnect ("fermion,tension=2", __iq2, __v2, __oq2);
+vconnect ("photon,label=$W^{\pm }/Z$", __v1, __v3);
+vconnect ("photon,label=$W^{\mp }/Z$", __v2, __v3);
+vconnect ("dashes,tension=.1", __H, __v3);
+vfreeze;
+vdraw;
+endsubgraph;
+endchar;
+% the end.
+end.
+endinput;

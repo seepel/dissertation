@@ -1,0 +1,48 @@
+\chapter{DETECTOR}
+\label{chap:detector}
+The Large Hadron Collider (LHC) is a proton-proton synchrotron located along the French/Swiss border near Geneva, Switzerland which utilizes the same accelerator tunnel that was originally built for LEP.
+The collider operates by using superconducting magnets to steer opposing beams of protons around a 27 kilometer circumference. 
+The protons are accelerated by means of radio-frequency resonating cavities.
+The protons in the LHC have a maximum energy (design) of $7$ TeV in each direction, providing a center of mass collision energy ($\sqrt{s}$) of $14$ TeV.
+The analysis presented in this text will focus on the data taken at the Compact Muon Solenoid experiment in 2011, during which time, the center of mass collision energy of the LHC was $7$ TeV.
+A common figure of merit for the performance of an accelerator is the luminosity, which can be simply described as the number of particles per unit area per unit time.
+The LHC design luminosity is $10^{34}$ \lumiunit, while during the 2011 data taking the peak luminosity reached approximately $5\times 10^{33}$ \lumiunit.
+The LHC has four collision points located around its circumference, at these points the proton beams are confined and collided.
+There is a detector situated around each of these collision points: The Compact Muon Solenoid (CMS), A Toroidal LHC Apparatus (ATLAS), LHC-B, and A Large Ion Collider Experiment (ALICE).
+
+The analysis presented in this thesis was performed on the CMS detector, thus a brief description of the detector will be given.
+The CMS detector is one of two general purpose detectors, the other being the ATLAS detector.
+Being a general purpose detector, the CMS detector is designed to observe a wide range of physics processes. 
+The CMS detector has a hermetic design such that it is capable of measuring nearly any and all particles that arise from the collisions with little acceptance loss.
+A cartesian coordinate system is defined for the CMS detector as follows: the $z$ axis points along the beam pipe, the $y$ axis pointing up with respect to gravity, and the $x$ axis pointing towards the center of the LHC ring.
+The CMS detector is designed in the shape of a cylinder, and as such a cylindrical coordinate system is also defined.
+The $z$ axis of the cylindrical coordinate system is the same as the $z$ axis of the cartesian coordinate system.
+The polar angle ($\theta$) is measured with respect to the $z$ axis with $\theta = 0$ being the positive $z$ axis, and $\theta = \pi$ being the negative $z$ axis.
+The azimuthal angle ($\phi$) is measured with respect to the $x$-$y$ plane, $\phi = 0$ is the positive $x$ axis and $\phi = \frac{\pi}{2}$ is the positive $y$ axis.
+Rather than the polar angle, it is often more useful to consider the pseudorapidity, $\eta = -ln\left[tan\left(\frac{\theta}{2}\right)\right]$, which for high energy particles approximates the rapidity $y = \onehalf ln\frac{E+p_{T}}{E-p_{T}}$. 
+Pseudorapidity is useful in that it is related to the relativistic boost of a particle.
+To accomplish the task of observing and measuring the properties of different processes and particles the CMS detector has multiple subsystems dedicated to different tasks.
+The inner-most sub system is a tracking device that measures the trajectory of charged particles.
+Just outside the tracking system are two calorimeters, first the electric calorimeter (ECAL) which measures the energy of photons and electrons. 
+The calorimeter system is completed by the hadronic calorimeter (HCAL) which measures the energy of jets of hadrons and is situated just outside the ECAL.
+A superconducting solenoid magnet provides a powerful magnetic field which bends the trajectory of charged particles allowing the measurement of a charged particle's momentum and charge.
+The solenoid magnet encloses the tracking system and calorimeter systems.
+Finally outside the solenoid is the muon system which measures the trajectory of particles that escape the calorimeters.
+Since the calorimeters are designed to completely absorb the energy of all other particles, with limited exceptions the only particles that reach the outer muon system are muons.
+A labeled schematic of the CMS detector and its subsystems is given in Figure \ref{fig:cmsdetector}.
+\begin{figure}[ht]
+\centering
+%\begin{center}
+\includegraphics[width=0.9\textwidth]{plots/cmsdetector.pdf}
+\caption{Schematic of the CMS detector\cite{CMS_DETECTOR}.}
+\label{fig:cmsdetector}
+%\end{center}
+\end{figure}
+\input{lhc}
+\input{magnet}
+\input{tracker}
+\input{ecal}
+\input{hcal}
+\input{muonsystem}
+\input{triggersystem}
+\input{simulation}

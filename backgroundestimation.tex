@@ -1,0 +1,68 @@
+\section{Background Estimation}
+\label{sec:backgroundestimation}
+\newcommand{\bgextrap}{N_{signal}^{MC}/N_{control}^{MC}}
+In estimating the backgrounds present in the final event selection two factors are considered separately, the normalization and the shape.
+Treating these issues separately allows the backgrounds to be estimated in a data-driven way more so than if the two were taken at the same time.
+
+Where the statistics allow, the background normalization is taken by extrapolating the number of events in the control region to the number of events in the signal region.
+This is done by comparing the event yield between the control and signal regions in simulation.
+The correction factor is then applied to the control region as measured in the data to produce the estimated background mass distribution.
+This technique can fail in the case where either the control and/or signal region do not have a sufficient number of events, in this case the normalization used is taken from the measured luminosity and the cross section for the process as measured by the CMS Collaboration.
+Additionally, no control region is available for the $Z \rightarrow \tau\tau$ or the di-boson backgrounds, as such the normalization is taken from the measured luminosity and measured cross sections.
+
+The shape for a given background is taken from the shape of the mass distribution in the control regions as defined in Section \ref{sec:backgrounds}.
+A summary of the source for the background shapes can be found in Table \ref{tab:backgroundshapes}, where $\circ$ signifies that the standard analysis cut from Section \ref{chap:analysis} is used, and a $-$ signifies that the cut is not used. 
+In Table \ref{tab:backgroundshapes}, it should be noted that $M_{T}$ is only used in the SM search categories, while $\pzetadiff$ is only used in the MSSM search categories.
+The normalization techniques used are summarized in Table \ref{tab:backgroundnormalizations}, where CMS $\sigma$ signifies that CMS measured cross section is used, and $\bgextrap$ signifies that the normalization is extrapolated from the control region.
+
+\begin{sidewaystable}[!ht]
+\begin{center}
+\caption{BACKGROUND CONTROL REGION DEFINITIONS}
+\label{tab:backgroundshapes}
+\begin{small}
+\begin{tabular}{lcccccc}
+\toprule
+Cut & Analysis & $Z \rightarrow ll$ & $Z \rightarrow \mu\mu$ (Jet)& $W \rightarrow l\nu$ & $t\overline{t}$ & QCD\\
+\midrule 
+%                                    Standard  Z->ll         Z->llJet      W                        ttbar     QCD
+Kinematic/Acceptance Cuts         & $\circ$  & $\circ$  & $\circ$ & $\circ$                & $\circ$ & $\circ$              \\
+Relative Lepton Isolation         & $< 10\%$ & $< 5\%$  & $< 5\%$ & $\circ$                & $\circ$ & $10..30\%$           \\
+Tau ID                            & Loose    & $\circ$  & $\circ$ & Very-Loose \& !Medium   & $\circ$ & Very-Loose \& !Medium \\
+Tau Muon Veto	                  & $\circ$  & inverted & $\circ$ & $\circ$                & $\circ$ & $\circ$              \\
+$\Delta R$                        & $\circ$  & $\circ$  & $> 1.0$ & $\circ$                & $\circ$ & $\circ$              \\
+$M_{T}$                           & $\circ$  & $\circ$  & $\circ$ & $> 50 GeV$             & $\circ$ & $\circ$              \\
+$\pzetadiff$                      & $\circ$  & -        & $\circ$ & $< -30 GeV$            & $\circ$ & -                  \\
+$\mu\mu$ Veto                     & $\circ$  & $\circ$  & $\circ$ & $\circ$                & $\circ$ & $\circ$              \\
+Zero Charge                       & $\circ$  & $\circ$  & -       & -                      & $\circ$ & -                    \\
+$N_{jets}$ w/ $E_{T}>40$ GeV $>2$ & -        & -        & -       & -                      & $\circ$ & -                    \\
+B-tagged jet w/ $E_{T}>60$ GeV    & -        & -        & -       & -                      & $\circ$ & -                    \\
+$N_{jets}$ w/ $E_{T}>60$ GeV $>1$ & -        & -        & -       & -                      & $\circ$ & -                    \\
+\bottomrule
+\end{tabular}
+\end{small}
+\end{center}
+\end{sidewaystable}
+
+\begin{table}[!ht]
+\begin{center}
+\caption{BACKGROUND NORMALIZATION TECHNIQUES}
+\label{tab:backgroundnormalizations}
+\begin{tabular}{lccccc}
+\toprule
+\multicolumn{1}{c}{ } &  \multicolumn{3}{c}{Standard Model}  & \multicolumn{2}{c}{MSSM} \\
+\midrule
+Process                       & {\zeroJets}  &  {\boosted}  &  {\vbf}      &  {\woBtag}   &  {\wBtag} \\
+\midrule
+$Z \rightarrow \tau\tau$     & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ \\
+QCD                           & OS/SS        & OS/SS        & OS/SS        & OS/SS        & OS/SS        \\
+$W$+jets 	              & $\bgextrap$  & CMS $\sigma$ & CMS $\sigma$ & $\bgextrap$  & CMS $\sigma$  \\
+$Z \rightarrow \mu\tau_{\mu}$ & $\bgextrap$  & CMS $\sigma$ & CMS $\sigma$ & $\bgextrap$  & CMS $\sigma$ \\
+$Z \rightarrow \mu\tau_{jet}$ & $\bgextrap$  & CMS $\sigma$ & CMS $\sigma$ & $\bgextrap$  & CMS $\sigma$ \\
+$t\bar{t}$                    & $\bgextrap$  & CMS $\sigma$ & CMS $\sigma$ & $\bgextrap$  & CMS $\sigma$ \\
+Di-Boson                      & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ & CMS $\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+

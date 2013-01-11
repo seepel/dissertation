@@ -1,0 +1,21 @@
+% eehiggstrahlung.mf -- do not edit, generated automatically by dissertation.tex
+input feynmf
+require_RCS_revision "1.30";
+beginchar(1, 110*1.0pt#, 62*1.0pt#, 0);
+"feynmf: 1";
+LaTeX_unitlength:=1.0pt;
+subgraph (0, 0, w, h);
+vinit;
+pickup pencircle scaled thin;
+vleft (__q1, __q2);
+vright (__V, __H);
+vconnect ("fermion", __q1, __v1, __q2);
+vconnect ("photon", __v1, __v2, __V);
+vconnect ("dashes", __v2, __H);
+vfreeze;
+vdraw;
+endsubgraph;
+endchar;
+% the end.
+end.
+endinput;

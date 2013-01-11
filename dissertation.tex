@@ -1,0 +1,175 @@
+%\documentclass[textrefs,review]{nddiss2e}
+%\documentclass[textrefs,draft]{nddiss2e}
+\documentclass[textrefs,final,noinfo]{nddiss2e}
+
+\usepackage[T1]{fontenc}
+\usepackage[version=3]{mhchem}
+\usepackage{feynmf}
+\usepackage{siunitx}
+\usepackage{xspace}
+
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\psibar}{\overline{\psi}}
+\newcommand{\gammafive}{\gamma_{5}}
+\newcommand{\onehalf}{\frac{1}{2}}
+\newcommand{\VPhi}{V(\phi_{1}^{2}+\phi_{2}^{2})}
+
+\newcommand{\lumiunit}{cm\ensuremath{^{-2}}s\ensuremath{^{-1}}\xspace}
+\newcommand{\microunit}[1]{\ensuremath{\mu}#1\xspace}
+\newcommand{\micrometer}{\microunit{m}}
+
+\newcommand{\zeroJets}{\emph{Zero/One Jet}\xspace}
+\newcommand{\boosted}{\emph{Boost}\xspace}
+\newcommand{\vbf}{\emph{VBF}\xspace}
+\newcommand{\wBtag}{\emph{B-Tag}\xspace}
+\newcommand{\woBtag}{\emph{Non B-Tag}\xspace}
+
+\newcommand{\ttbar}{t\overline{t}\xspace}
+
+\newcommand{\includefinalditauplot}[4] {
+\begin{minipage}[b]{0.45\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTauOS_#1_#2_#3_#4.pdf}
+\end{minipage}
+}
+
+\newcommand{\includeditauplot}[4] {
+\begin{minipage}[b]{0.45\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTau_#1_#2_#3_#4.pdf}
+\end{minipage}
+}
+
+\newcommand{\includefullplot}[3]{
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3.pdf}
+}
+
+\newcommand{\includeplot}[3]{
+\begin{minipage}[b]{0.5\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3.pdf}
+\end{minipage}
+}
+
+\newcommand{\includeleptonplot}[4]{
+\begin{minipage}[b]{0.5\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3_#4.pdf}
+%\includegrahphics[scale=0.35]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3_#4.pdf} 
+\end{minipage}
+}
+
+\newcommand{\includeleptoncutplot}[5]{
+\begin{minipage}[b]{0.45\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotAHtoMuTau_#1_#2_#3_#4_#5.pdf}
+%\includegrahphics[scale=0.35]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3_#4.pdf} 
+\end{minipage}
+}
+
+\newcommand{\includebackgroundtemplate}[3]{
+\begin{minipage}[b]{0.45\linewidth} 
+\centering
+  \includegraphics[width=0.95\textwidth]{plots/plotBgEstTemplate#1_vs_AnalysisZtoMuTau_#2_Mass_#3.pdf}
+%\includegrahphics[scale=0.35]{plots/plotAHtoMuTauOS_#1_finalSamplePlots_#2_#3_#4.pdf} 
+\end{minipage}
+}
+
+\newcommand{\met}{\ensuremath{\not\!\!{E}_{T}}}
+\newcommand{\pzetadiff}{\Delta p_{\zeta}}
+
+\begin{document}
+
+\frontmatter
+
+\title{SEARCH FOR STANDARD MODEL AND NEUTRAL MSSM HIGGS BOSONS DECAYING TO PAIRS OF TAU LEPTONS AT $\sqrt{s} = 7$ TeV}
+\author{Sean P. Lynch}
+\work{Dissertation}
+%\degprior{B.S., M.S.}
+\degaward{Doctor of Philosophy}
+\advisor{Colin Jessop}
+\secondadvisor{Mitchell Wayne}
+\department{Physics}
+
+\maketitle
+
+\copyrightholder{Sean Lynch}
+\copyrightyear{2012}
+\makecopyright
+
+%\begin{dedication}
+%  TBD
+%\end{dedication}
+
+\begin{abstract}
+A search for neutral Higgs bosons decaying into two tau leptons is presented. 
+The search is performed using data collected by the Compact Muon Solenoid experiment at the Large Hadron Collider during 2011. 
+The data represents $pp$ collisions at a center of mass energy, $\sqrt{s} = 7$ TeV, and corresponds to an integrated luminosity of $4.6$ fb$^{-1}$.
+This search considers the final state in which one of the tau leptons decays to a muon and neutrinos, and in which the second tau lepton decays into mesons and a single neutrino.
+Two separate searches are performed: a search for the Standard Model Higgs boson, and a search for neutral Higgs bosons in the Minimal Supersymmetric Standard Model.
+No excesses are observed above background expectations and upper limits on the cross section times branching ratio is set in both models.
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%\begin{preface}
+%  Preface goes here.
+%\end{preface}
+
+\begin{acknowledge}
+Without the support of my family, friends, and colleagues over the last six years the completion of this thesis would not have been possible.
+
+First and foremost I would like to acknowledge the support of my advisors Colin Jessop and Mitchell Wayne. 
+They provided my with constant support that made the research for this thesis possible.
+Additionally, they always made themselves available whenever I needed advice or assistance in furthering my research or my career.
+Most importantly, they were always interested in ensuring that I was involved in projects that were useful and that I enjoyed.
+
+I would also like to acknowledge the advice of Jeff Kolb and Jamie Antonelli, with whom I worked closely with on this topic.
+Jeff is a postdoc at Notre Dame, and without his guidance I would have had a significantly more difficult time understanding many of the concepts that are crucial to this analysis.
+Jamie Antonelli is a fellow graduate student whom provided me with an always available sounding board for new thoughts on how to approach the analysis.
+
+During my time at CERN I had the opportunity to collaborate with many great physicists.
+The Notre Dame CMS group were often my first point of contact for solving technical problems, furthering my understanding of High Energy Physics, and other general inquiries.
+Along with Colin and Mitch the Notre Dame faculty members Randy Ruchti, Kevin Lannon, and Mike Hildreth have always helped to support the Notre Dame CMS group.
+The rest of the Notre Dame group that spent time with me in Building 512 at CERN are Jeff Kolb, Jason Slaunwhite, Ted Kolberg, Jamie Antonelli, Doug Berry, Tessa Pearson, David Morse, Nil Valls and Robin Luo.
+In addition to the Notre Dame group, the CMS group from the University of Virginia were always willing to lend a helping hand, including Sasha Ledovskoy, Chris Neu, Sarah Boutle, and Rachel Yohay.
+When I first arrived at CERN I took part in the commissioning of the Electromagnetic Calorimeter, this laid the groundwork for my knowledge before beginning my thesis topic.
+I would like to acknowledge those that helped me come up to speed on understanding the CMS detector and software: Pascal Paganini, Giovanni Franzoni, Paolo Meridiani, Nicolo Cartiglia, Andre David, Toyoko Orimoto, and Seth Cooper.
+
+I couldn't have asked for a better group than the incoming graduate students of 2006: Jamie Antonelli, Nicholas Blumm, Brian Bucher, Cornelius Griggs, Antonios Kontos, Colin McClelland, Matt Meixner, Kritsanu Tivakornsasithorn, and Ethan Uberseder.
+We were a closely-knit group that helped each other with course work and social events to keep each other sane as we progressed through our classwork.
+Despite moving on into different fields of Physics we have remained close and have strong bonds of friendship to this day.
+
+Finally I would like to thank my father and mother, George and Elisabeth Lynch, and Chiara Fornasero for their patience and support as I finished this thesis.
+
+\end{acknowledge}
+
+%\begin{symbols}
+%  \sym{\sqrt{s}}
+%  \sym{p_{T}}{transverse momentum}
+%  \sym{\eta}{pseudo-rapidity}
+%  \sym{\phi}{}
+%  \sym{d_{0}}{transverse impact parameter}
+%  \sym{d_{z}}{longitudinal impact parameter}
+%  \sym{E_{T}}{transverse energy}
+%  \sym{\Delta\beta}{isolation pile-up correction}
+%\end{symbols}
+
+\mainmatter
+
+\include{introduction}
+\include{theory}
+\include{detector}
+\include{analysis}
+\include{background}
+\include{systematics}
+\include{results}
+
+\backmatter
+\bibliographystyle{abbrv}
+\bibliography{dissertation}
+
+\end{document}

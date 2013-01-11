@@ -1,0 +1,6 @@
+% betadecaycontact.t1 -- generated automatically from betadecaycontact.log
+% Think twice before editing THIS file!
+\fmfL(-6,31,r){$n$}
+\fmfL(103.90417,-3.45575,lt){$\nu $}
+\fmfL(116,31,l){$p$}
+\fmfL(103.90417,65.45575,lb){$e^{-}$}

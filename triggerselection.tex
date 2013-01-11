@@ -1,0 +1,32 @@
+\section{Trigger Selection}
+\label{sec:triggerselection}
+As discussed in Section \ref{sec:triggersystem} the majority of data coming from the detector is discarded. 
+For this reason it is important that an appropriate trigger path exists for any analysis.
+For this analysis a number of muon + hadronic tau cross triggers are used to filter the data coming from the detector.
+The cross trigger uses a combination of an isolated muon trigger along with an isolated tau trigger.
+Where possible the trigger used is the lowest possible transverse momentum ($p_{T}$) combination that remains unprescaled.
+For this reason the trigger $p_{T}$ thresholds used change for different run ranges and scale with the luminosity being delivered to the CMS detector.
+Towards the end of the 2011 data taking an additional requirement on the muon pseudo-rapidity was added.
+The primary driving force in the choice of $p_{T}$ cuts outlined in Section \ref{sec:particleselection} is the rising edge of the trigger efficiency close to the $p_{T}$ threshold of the trigger object, the treatment of the trigger efficiency will be discussed in Chapter \ref{chap:systematics}.
+The specific triggers used in the analysis consist of an isolated muon, in most cases with $p_{T} > 15$ GeV, combined with a loosely isolated particle flow tau object with $p_{T} > 10$ GeV, $p_{T} > 15$ GeV, or $p_{T} > 20$ GeV, depending on the luminosity.
+
+\begin{table}[tpb]
+  \setlength{\capwidth}{0.9\textwidth}
+  \begin{small}
+  \begin{center}
+    \caption{HLT TRIGGER PATHS USED}
+    \label{tab:triggerpaths}
+    \begin{tabular}{lcc}
+      \toprule
+      HLT Trigger Path & Run Range & Int. Luminosity [$fb^{-1}$] \\
+      \midrule
+      HLT\_IsoMu12\_LooseIsoPFTau10 		& 160431-163869 & 0.017 \\
+      HLT\_Mu15\_LooseIsoPFTau20    		& 160431-163869 & 0.017 \\
+      HLT\_IsoMu15\_LooseIsoPFTau15 		& 165088-178420 & 1.97 \\  
+      HLT\_IsoMu15\_eta2p1\_LooseIsoPFTau20 	& 173236-180252 & 2.46 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \end{small}
+\end{table}
+

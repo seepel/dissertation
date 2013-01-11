@@ -1,0 +1,183 @@
+In extracting a signal it is necessary to estimate the background contributions to the final $m_{\tau\tau}$ distribution.
+Whenever possible it is desirable to construct the background estimate in a data-driven way. 
+This avoids the inclusion of possible systematic uncertainties that exist in the simulation.
+The following chapter describes the prominent backgrounds that are of concern and discusses the methods used to estimate contributions from those backgrounds.
+\section{Prominent Backgrounds}
+\label{sec:backgrounds}
+
+\subsection{\texorpdfstring{$Z/\gamma^{*}$}{Drell-Yan} Backgrounds}
+The largest contributing background is in the $Z\rightarrow\tau\tau$ channel where one $\tau$ decays hadronically and the other decays into a muon.
+This is an irreducible background in that it can not be distinguished from the signal as its decay products are identical to $H\rightarrow\tau\tau$.
+The normalization for this background is taken using the CMS $Z\rightarrow\tau\tau$ cross section along with a signal efficiency taken from simulation, while the shape is taken from a special dataset that embeds $Z\rightarrow\tau\tau$ simulation inside selected $Z\rightarrow\mu\mu$ events collected from data.
+The dataset is constructed by selecting $Z\rightarrow\mu\mu$ events and first removing the muons from the event.
+Tau leptons are then simulated with the original muon's four-momenta.
+By performing this embedding procedure the recoil and underlying event for the background can be taken from data providing a more accurate description of the process than if taken from simulation alone.
+
+Backgrounds arise from the process $Z\rightarrow\mu\mu$ in two scenarios.
+The first is the case where one of the muons is mis-reconstructed as a tau ($Z\rightarrow\mu\tau_{\mu}$).
+A control region for this background is constructed by inverting the tau muon discriminant as mentioned in Section \ref{sec:tauselection}, and in addition, inverting the di-muon rejection requirement as outlined in Section \ref{sec:ditauselection}.
+In addition to the inversion, the di-muon pair is required to have an invariant mass in the range $40$-$100$ GeV.
+A small bias is introduced in the $Z\rightarrow\mu\tau_{\mu}$ control region, as can be seen in Figure \ref{fig:zmumubias}. 
+This bias will be treated at the end of this section.
+%A similar, but smaller bias is introduced in the $Z\rightarrow\mu\tau_{\mu}$ control region, and a similar correction is applied the resulting distribution is shown in Figure \ref{fig:zmumucorrection}.
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{MC}{ZmumuMuonMisIdEnriched}{zeroJets}
+\includebackgroundtemplate{MC}{ZmumuMuonMisIdEnriched}{woBtag}
+\caption{Bias introduced in $Z\rightarrow\mu\tau_{\mu}$ control regions for the \emph{Zero/One Jet} (left) and \emph{Non B-Tagged} (right) categories.}
+\label{fig:zmumubias}
+\end{figure}
+
+The second case in which the $Z\rightarrow\mu\mu$ process can fake the signal is  when a jet elsewhere in the event is mis-reconstructed as a tau ($Z\rightarrow\mu\tau_{jet}$)
+In order to construct a control region for the case where a jet in the $Z\rightarrow\mu\mu$ event is faking the tau, the di-muon pair rejection requirement is again inverted.
+When inverting the di-muon rejection requirement the second loosely selected muon is only required to have matching tracks in the inner tracking system and muon systems, none of the other cuts described in Section \ref{sec:ditauselection} are applied.
+The final mass spectra in the $Z\rightarrow\mu\tau_{jet}$ control region contains a bias towards lower mass as shown in Figure \ref{fig:zmujetbias}, thus a bias correction must be applied.
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{MC}{ZmumuJetMisIdEnriched}{zeroJets}
+\includebackgroundtemplate{MC}{ZmumuJetMisIdEnriched}{woBtag}
+\caption{Bias introduced in the $Z\rightarrow\mu\tau_{jet}$ control regions for the \emph{Zero/One Jet} (left) and \emph{Non B-Tagged} (right) categories.}
+\label{fig:zmujetbias}
+\end{figure}
+
+A bias correction is taken by the ratio of the simulation in the signal region to the simulation of the background region bin by bin in the mass spectra. 
+The corrected distributions for the $Z\rightarrow\mu\mu$ backgrounds can be seen in Figures \ref{fig:zmumucorrectionzerojets} and \ref{fig:zmumucorrectionwobtag} for the \emph{Zero/One Jet} and \emph{Non B-Tagged} categories respectively. 
+Since both the bias and the scale of this distribution are small, this can be done safely and the systematic uncertainties associated with the simulation can then be ignored in the final signal extraction.
+For the lower statistic categories, \emph{Boost}, \emph{VBF}, and \emph{B-Tagged},  it is difficult determine the bias induced in the $Z\rightarrow\mu\tau_{jet}$ and $Z\rightarrow\mu\mu$ control regions, however it is decidedly better to take the uncorrected distributions here as they actually have a shape compared to the simulation which does not have enough statistics.
+The distributions for the control region compared to simulation for the lower statistic categories can be seen in Figures \ref{fig:zmumubiaslow} and \ref{fig:zmujetbiaslow} for the $Z\rightarrow\mu\tau_{\mu}$ and $Z\rightarrow\mu\tau_{jet}$ backgrounds respectively.
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{Data}{ZmumuMuonMisIdEnriched}{zeroJets}
+\includebackgroundtemplate{DataCorrected}{ZmumuMuonMisIdEnriched}{zeroJets}
+
+\includebackgroundtemplate{Data}{ZmumuJetMisIdEnriched}{zeroJets}
+\includebackgroundtemplate{DataCorrected}{ZmumuJetMisIdEnriched}{zeroJets}
+\caption{Bias correction performed on the $Z\rightarrow\mu\tau_{\mu}$ (top) and $Z\rightarrow\mu\tau_{jet}$ (bottom) in the \emph{Zero/One Jet} category}
+\label{fig:zmumucorrectionzerojets}
+\end{figure}
+\begin{figure}[tpb]
+\centering
+\includebackgroundtemplate{Data}{ZmumuMuonMisIdEnriched}{woBtag}
+\includebackgroundtemplate{DataCorrected}{ZmumuMuonMisIdEnriched}{woBtag}
+
+\includebackgroundtemplate{Data}{ZmumuJetMisIdEnriched}{woBtag}
+\includebackgroundtemplate{DataCorrected}{ZmumuJetMisIdEnriched}{woBtag}
+\caption{Bias correction performed on the $Z\rightarrow\mu\tau_{\mu}$ (top) and $Z\rightarrow\mu\tau_{jet}$ (bottom) in the \emph{Non B-Tagged} category}
+\label{fig:zmumucorrectionwobtag}
+\end{figure}
+
+\begin{figure}[tpb]
+\centering
+\includebackgroundtemplate{MC}{ZmumuMuonMisIdEnriched}{boosted}
+\includebackgroundtemplate{MC}{ZmumuMuonMisIdEnriched}{wVBFtag}
+
+\includebackgroundtemplate{MC}{ZmumuMuonMisIdEnriched}{wBtag}
+\caption{Di-tau mass distribution for the $Z\rightarrow\mu\tau_{\mu}$ control region compared to simulation for the \emph{Boost} (top left), \emph{VBF} (top right), and \emph{B-Tagged} (bottom) categories.}
+\label{fig:zmumubiaslow}
+\end{figure}
+\begin{figure}[tpb]
+\centering
+\includebackgroundtemplate{MC}{ZmumuJetMisIdEnriched}{boosted}
+\includebackgroundtemplate{MC}{ZmumuJetMisIdEnriched}{wVBFtag}
+
+\includebackgroundtemplate{MC}{ZmumuJetMisIdEnriched}{wBtag}
+\caption{Di-tau mass distribution for the $Z\rightarrow\mu\tau_{jet}$ control region compared to simulation for the \emph{Boost} (top left), \emph{VBF} (top right), and \emph{B-Tagged} (bottom) categories.}
+\label{fig:zmujetbiaslow}
+\end{figure}
+
+
+
+\subsection{QCD Multi-jet Background}
+\label{sec:qcdbackground}
+QCD multi-jet events can fake the signal in the case where a muon is produced in a hadronic decay and is sufficiently isolated while at the same time a jet in the event fakes a tau.
+Although the isolation requirements on the lepton selections make this scenario rare, the production rate for QCD multi-jet events is many orders of magnitude larger than the signal. 
+Thus even a small fraction of these events can lead to a large background when compared to the signal.
+Two control regions are defined for the QCD background. 
+The first discussed is targeted to estimate the overall normalization of the background, while the second is designed to estimate the shape of the invariant mass distribution.
+
+To estimate the size of this background the control region is constructed by leveraging the fact that there is expected to be no sign correlation between the selected muon and tau candidates
+The control region is constructed by first applying all event selection criteria in the analysis with the exception that the charge of the muon/tau pair is required to be non zero.
+In this same sign control region the mass spectra for the $Z/\gamma^{*} \rightarrow \tau\tau$, $Z/\gamma^{*} \rightarrow \mu\mu$, and $W\rightarrow\mu\nu$ simulations are then subtracted.
+%In an orthogonal dataset composed by inverting the isolation ($I_{rel} > 0.2$), the ratio of opposite sign (OS) and same sign (SS) combinations is measured \cite{SIGNRATIO} and found to be
+In an orthogonal dataset composed by inverting the isolation ($I_{rel} > 0.2$), the ratio of opposite sign (OS) and same sign (SS) combinations is measured and found to be
+\begin{equation}
+f_{OS/SS} = 1.11 \pm 0.02.
+\end{equation}
+This ratio is applied to the modified SS mass spectra and the result is integrated to obtain the normalization for the QCD multi-jet control region.
+
+Due to the fact that the OS/SS control region relies on the subtraction of simulated datasets, the shape is considered to be rather unreliable.
+Rather than taking the shape from the OS/SS control region, a separate control region is constructed by inverting the isolation requirement of the muon and tau candidates.
+Indeed not only does this produce a more reliable shape than that of the OS/SS control region, but it also has the advantage of containing a far greater number of events.
+The shape of the invariant mass distribution for this control region compared to Monte Carlo expectation can be seen in Figure \ref{fig:qcdenriched}.
+
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{MC}{QCDenriched}{zeroJets}
+\includebackgroundtemplate{Data}{QCDenriched}{zeroJets}
+
+\includebackgroundtemplate{MC}{QCDenriched}{woBtag}
+\includebackgroundtemplate{Data}{QCDenriched}{woBtag}
+\caption{
+  Comparison of invariant mass distributions for the QCD enriched control region in the \emph{Zero/One Jet} (top) and \emph{Non B-Tagged} (bottom) categories compared to the simulated expectation in the signal region. 
+  The distributions on the left compare the simulated control region compared to the simulated signal region, while the distributions on the right compare the measured data in the control region, to the simulated distribution in the signal region.
+}
+\label{fig:qcdenriched}
+\end{figure}
+
+\subsection{\texorpdfstring{$W\rightarrow\mu\nu$}{W To Muon Plus Neutrino} Background}
+Events in which a $W$ boson decays to a lepton and a neutrino can fake the signal in the case where a jet elsewhere in the event fakes a tau.
+Powerful discriminating variables for events that contain a $W$ boson are $M_{T}$ and $\pzetadiff$, as mentioned in Section \ref{sec:eventselection}. 
+Therefore these variables are used to construct a control region for this background.
+The control region is assembled by inverting the $M_{T}$($\pzetadiff$) requirements to $M_{T} > 50$ GeV($\pzetadiff < -30$ GeV) for the SM(MSSM) search.
+Figure \ref{fig:wjetsbias} shows that like in the case of the $Z\rightarrow\mu\mu$ control regions there is a bias that is induced in the control region when compared to the simulation in the signal region.
+Unlike the case for the $Z\rightarrow\mu\mu$ control regions however, the bias in the $W$ control region is quite large.
+Although the bias correction does indeed recover the shape of the $W$ background when compared to the simulation, as can be seen in Figure \ref{fig:wjetscorrection}, the bias is quite large and the control region no longer has the advantage that systematic uncertainties can be ignored.
+For this reason, the control region developed for the $W$ background is used to obtain the normalization, and the shape is taken from simulation.
+
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{MC}{WplusJetsEnriched}{zeroJets}
+\includebackgroundtemplate{MC}{WplusJetsEnriched}{woBtag}
+\caption{Bias in the di-tau invariant mass for the $W$ boson control region compared to the $W\rightarrow\mu\nu$ simulation in the signal region for the \emph{Zero/One Jet} (left) and \emph{Non B-Tagged} (right) categories.} 
+\label{fig:wjetsbias}
+\end{figure}
+
+\begin{figure}[tpb]
+\centering
+\includebackgroundtemplate{Data}{WplusJetsEnriched}{zeroJets}
+\includebackgroundtemplate{DataCorrected}{WplusJetsEnriched}{zeroJets}
+
+\includebackgroundtemplate{Data}{WplusJetsEnriched}{woBtag}
+\includebackgroundtemplate{DataCorrected}{WplusJetsEnriched}{woBtag}
+\caption{Di-tau invariant mass distribution for the $W$ boson control region before (left) and after (right) the bias correction that is applied to recover the simulated shape.}
+\label{fig:wjetscorrection}
+\end{figure}
+
+\subsection{\texorpdfstring{$\ttbar$}{TTBar} Background}
+Events in which a top/anti-top pair are produced result in an irreducible background in which one top decays semi-leptonically to a muon and the other to a tau.
+A control region for this background is constructed by applying all analysis cuts, and in addition requiring at least two jets  with $E_{T} > 40$ GeV in the acceptance range $-2.4 < \eta < 2.4$.
+Additionally one of the two jets must have a B-Tag, and there must be at least one jet with $E_{T} > 60$ GeV.
+Each jet in the selection must pass the requirement that there not be an isolated lepton (electron, muon, or tau) within a cone of $\Delta R < 0.7$  around the jet.
+The comparison of the shape for the $\ttbar$ in the control region and the simulated signal region can be seen in Figures \ref{fig:smttbar} and \ref{fig:mssmttbar} for the SM and MSSM categories respectively.
+
+\begin{figure}[ht]
+\centering
+\includebackgroundtemplate{MC}{TTplusJetsEnriched}{zeroJets}
+\includebackgroundtemplate{MC}{TTplusJetsEnriched}{boosted}
+
+\includebackgroundtemplate{MC}{TTplusJetsEnriched}{wVBFtag}
+\caption{Di-tau invariant mass for the $t\overline{t}$ control region compared to the simulated signal region for the \emph{Zero/One Jet} (top left), \emph{Boost} (top right), and \emph{VBF} (bottom) SM event categories.}
+\label{fig:smttbar}
+\end{figure}
+
+\begin{figure}[tpb]
+\centering
+\includebackgroundtemplate{MC}{TTplusJetsEnriched}{woBtag}
+\includebackgroundtemplate{MC}{TTplusJetsEnriched}{wBtag}
+\caption{Di-tau invariant mass for the $t\overline{t}$ control region compared to the simulated signal region for the \emph{Zero/One Jet} (top left), \emph{Non B-Tagged} (left), and \emph{B-Tagged} (right) MSSM event categories.}
+\label{fig:mssmttbar}
+\end{figure}
+
+\subsection{Di-Boson Background}
+Events in which two vector bosons are produced can lead to both irreducible backgrounds as well as backgrounds which can fake the signal, these events include production of $WW$, $WZ$, and $ZZ$.
+The backgrounds arising from such events is small, and as such no control region is defined, the background estimation is taken from simulation and normalized to the next to leading order (NLO) cross section calculation\cite{VVCROSSSECTION} along with the selection efficiency.

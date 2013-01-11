@@ -1,0 +1,165 @@
+\section{Beyond the Standard Model}
+\label{sec:bsd}
+
+The SM has seen tremendous success in its predictive power, and indeed there have been very few experiments that are incompatible with the SM.
+There are, however, discrepancies that lead one to believe that the SM is not complete.
+The SM can be thought to be an effective theory that is valid at energies below some cut off scale ($\Lambda$).
+The challenge is then to extend the SM to include new physics above $\Lambda$ while maintaining consistency with the SM below $\Lambda$.
+
+One obvious omission in the SM is the inclusion of gravity. 
+To date there is still no verifiable model for which gravity and quantum mechanics are compatible.
+Beyond gravity there are still other reasons to believe new physics must lie beyond the SM.
+Cosmological observations indicate that the universe has an additional massive amount of matter that interacts only weakly, commonly referred to as dark matter.
+More relevant to this analysis, and the Higgs boson, there is the hierarchy problem.
+The hierarchy problem presents itself in numerous ways. 
+Here the leading order correction to the Higgs mass is considered.
+The one loop fermion correction to the Higgs mass can be seen in the left side of Figure \ref{fig:higgsfermion}. 
+This diagram contributes approximately $\Delta m_{H}^{2} \approx \Lambda^{2}$.
+If one assumes $\Lambda \approx M_{planck} \approx \mathcal{O}(10^{19})$, there then needs to exist higher order corrections $\mathcal{O}(10^{38})$. 
+In other words the higher order corrections need to be 36 orders of magnitude larger than the Higgs mass itself.
+Higher order corrections of such magnitude seem very unnatural.
+One may therefore look to new physics to bound the calculation of the Higgs mass.
+\begin{figure}
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+\begin{fmffile}{higgsfermion} 	%one.mf will be created for this feynman diagram  
+\fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+\begin{fmfgraph*}(110,62) %Sets size of Diagram
+\fmfleft{i}
+\fmfright{o}
+\fmflabel{$H$}{i}
+\fmflabel{$H$}{o}
+\fmf{dashes}{i,v1}
+\fmf{dashes}{v2,o}
+\fmf{fermion,left,tension=.4}{v1,v2,v1}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{center}
+\end{minipage}
+%\hspace{0.1cm}
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+\begin{fmffile}{higgsscaler} 	%one.mf will be created for this feynman diagram  
+\fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+\begin{fmfgraph*}(110,62) %Sets size of Diagram
+\fmfbottom{i,o}
+\fmflabel{$H$}{i}
+\fmflabel{$H$}{o}
+\fmf{dashes}{i,v}
+\fmf{dashes}{v,o}
+\fmf{dashes,right,tension=.7}{v,v}
+\end{fmfgraph*}
+}
+\end{fmffile}
+\end{center}
+\end{minipage}
+\caption{One loop fermion (left) and sparticle (right) corrections to the Higgs boson mass.}
+\label{fig:higgsfermion}
+\end{figure}
+
+One of the arguably more appealing theories to extend the SM is supersymmetry, which is aimed at solving the hierarchy problem.
+Supersymmetry extends the SM by introducing an additional symmetry between bosons and fermions.
+This symmetry has the effect of adding new particles to the SM in such a way that each additional particle is paired with a SM particle. 
+In each pairing, all of the quantum numbers remain the same except that the spin of the partner particle is modified by 1/2.
+Each fermion has a super partner that is a scalar boson, referred to by prepending an ``s'', for scalar, to the name of the SM particle, giving the collection of sparticles.
+Each gauge boson has a fermion super partner, the nomenclature here is to append ``ino'' to the name of the particle, for example gluino, collectively referred to as gauginos.
+This effectively solves the hierarchy problem in that for each fermion loop diagram , there is an accompanying diagram that enters in with opposite sign for the super partner as shown in the right side of Figure \ref{fig:higgsfermion}.
+In most models of supersymmetry the lightest of the supersymmetric particles (LSP) is necessarily stable. 
+This leads to an additional benefit in the form of an attractive dark matter candidate.
+
+In order to construct the algebra for supersymmetry groups, each SM particle and its supersymmetric partner must be grouped into either chiral or gauge supermultiplets. 
+A chiral supermultiplet contains a left handed or right handed fermion and a complex scalar, while a gauge supermultiplet contains a spin-1 vector boson and a Majorana gaugino fermion.
+It is then clear that the Higgs must exist in a chiral supermultiplet, as a corollary to this requirement there must be at least one additional Higgs supermultiplet.
+The requirement of a second Higgs supermultiplet is ultimately due to gauge anomalies that are introduced with the Higgsino which must be canceled by a second supermultiplet of opposite hypercharge.
+To summarize, in order to have a supersymmetric extension to the SM one must double the particle content of the SM by creating supermultiplets and add at least one additional Higgs supermultiplet. 
+This is known as the Minimal Supersymmetric Standard Model (MSSM).
+
+\subsection{Minimal Supersymmetric Standard Model}
+\label{sec:mssm}
+The content of the MSSM has been set forth at the beginning of this section and is summarized in Tables \ref{tab:chiralsuper} and \ref{tab:gaugesuper}. 
+Here the phenomenological repercussions of the MSSM are briefly discussed, while a full treatment of supersymmetry can be found in \cite{SUSY}.
+The superpotential of the MSSM is:
+\begin{equation}
+W_{MSSM} = \overline{u}\mathbf{y_{u}}QH_{u} - \overline{d}\mathbf{y_{d}}QH_{d} - \overline{e}\mathbf{y_{e}}LH_{d} + \mu H_{u}H_{d}.
+\end{equation}
+where $\mathbf{y}$ are the Yukawa 3 x 3 matrices.
+Here one can note that the up type fermions couple to the $H_{u}$ doublet while the down type fermions to the $H_{d}$ doublet.
+The scalar potential ($V$) at the minimum is found to be similar to that in the SM:
+\begin{equation}
+\begin{array}{rcl}
+\label{eqn:superpotential}
+V & = & (|\mu|^{2} + m_{H_{u}}^{2})|H_{u}^{0}|^{2} + (|\mu|^{2} + m_{H_{d}}^{2})|H_{d}^{0}|^{2} \\
+  & - & (bH_{u}^{0}H_{d}^{0} + c.c.) + \frac{1}{8}(g^{2} + g^{\prime 2})(|H_{u}^{0}|^{2} - |H_{d}^{0}|^2)^{2}.
+\end{array}
+\end{equation}
+In Equation \ref{eqn:superpotential} both $H_{u}$ and $H_{d}$ can acquire a VEV, $\nu_{u}$ and $\nu_{d}$ related to the VEV in the SM via:
+\begin{equation}
+\nu_{u}^{2} + \nu_{d}^{2} = \nu^{2} = \frac{2M_{Z}^{2}}{g^{2} + g^{\prime 2}} \approx (175 GeV)^{2}.
+\end{equation} 
+In the MSSM, the ratio of the VEVs is commonly referred to as the parameter $tan\beta$ as shown in:
+\begin{equation}
+tan\beta \equiv \frac{\nu_{u}}{\nu_{d}},
+\end{equation}
+which has significant phenomenological consequences.
+Most notably, for the purposes of this analysis, the Yukawa couplings of the SM fermions are dependent upon $tan\beta$ as follows:
+\begin{equation}
+\begin{array}{rcl}
+\label{eqn:mssmcouplings}
+m_{t} & = & \mathbf{y_{t}}\nu sin\beta, \\
+m_{b} & = & \mathbf{y_{b}}\nu cos\beta, \\
+m_{\tau} & = & \mathbf{y_{\tau}}\nu cos\beta.
+\end{array}
+\end{equation}
+When $tan\beta$ becomes large, the couplings for the $b$ and $\tau$ become enhanced. 
+In the MSSM, the Higgs sector has eight degrees of freedom compared to the four degrees of freedom in the SM. 
+As in the SM three of those degrees of freedom give mass to the $W^{\pm}$ and $Z$ bosons, while the remaining five create five massive Higgs bosons.
+The five Higgs bosons in the MSSM are two CP-even neutral scalars, $h^{0}$ and $H^{0}$, one CP-odd neutral scalar, $A^{0}$, and two charged scalars, $H^{\pm}$.
+At tree level the mass of the three neutral Higgs bosons are related to each other along with $tan\beta$ by the equations
+\begin{equation}
+\begin{array}{rcl}
+\label{eqn:higgsmasses}
+m_{h^{0}}^{2} & = & \frac{1}{2}\left(m_{A^{0}}^{2} + m_{Z}^{2} - \sqrt{\left(m_{A^{0}}^{2} - m_{Z}^{2}\right)^{2} + 4m_{A^{0}}^{2}m_{Z}^{2}sin^{2}(2\beta)}\right), \\
+m_{H^{0}}^{2} & = & \frac{1}{2}\left(m_{A^{0}}^{2} + m_{Z}^{2} + \sqrt{\left(m_{A^{0}}^{2} - m_{Z}^{2}\right)^{2} + 4m_{A^{0}}^{2}m_{Z}^{2}sin^{2}(2\beta)}\right). \\
+\end{array}
+\end{equation}
+In Equation \ref{eqn:higgsmasses}, one can note a few interesting behaviors, first the mass of $m_{h^{0}}$ is bounded from above by $m_{Z}$.
+Secondly, $m_{A^{0}}$ has the artifact of being nearly degenerate with either $m_{h^{0}}$ at low mass or $m_{H^{0}}$ at high mass.
+
+\begin{table}[htpb]
+  \begin{center}
+    \caption{CHIRAL SUPERMULTIPLETS IN THE MSSM}
+    \label{tab:chiralsuper}
+    \begin{tabular}{lccccc}
+      \toprule
+      Names & symbol & spin 0 & spin 1/2 & $SU(3)_{C}, SU(2)_{L}, U(1)_{Y}$ \\
+      \midrule
+      squarks, quarks & $Q$ & $\begin{pmatrix}\tilde{u}_{L} & \tilde{d}_{L}\end{pmatrix}$ & $\begin{pmatrix}u_{L} & d_{L}\end{pmatrix}$ & $\begin{pmatrix}3, & 2, & \frac{1}{6}\end{pmatrix}$ \\
+                      & $\overline{u}$ & $\tilde{u}_{R}^{*}$  & $u_{R}^{\dagger}$ & $\begin{pmatrix}\overline{3}, & 1, & -\frac{2}{3}\end{pmatrix}$ \\
+                      & $\overline{d}$ & $\tilde{d}_{R}^{*}$  & $d_{R}^{\dagger}$ & $\begin{pmatrix}\overline{3}, & 1, & \frac{1}{3}\end{pmatrix}$ \\
+      \midrule
+      sleptons, leptons & $L$ & $\begin{pmatrix}\tilde{\nu} & \tilde{e}_{L}\end{pmatrix}$ & $\begin{pmatrix}\nu & e_{L}\end{pmatrix}$ & $\begin{pmatrix}1, & 2, & -\frac{1}{2}\end{pmatrix}$ \\
+                      & $\overline{e}$ & $\tilde{e}_{R}^{*}$  & $e_{R}^{\dagger}$ & $\begin{pmatrix}1, & 1, & 1\end{pmatrix}$ \\
+      \midrule
+      Higgs, higgsinos & $H_{u}$ & $\begin{pmatrix}H_{u}^{+} & H_{u}^{0}\end{pmatrix}$ & $\begin{pmatrix}\tilde{H}_{u}^{+} & \tilde{H}_{u}^{0}\end{pmatrix}$ & $\begin{pmatrix}1, & 2, & +\frac{1}{2}\end{pmatrix}$ \\
+                       & $H_{d}$ & $\begin{pmatrix}H_{d}^{+} & H_{d}^{0}\end{pmatrix}$ & $\begin{pmatrix}\tilde{H}_{d}^{+} & \tilde{H}_{d}^{0}\end{pmatrix}$ & $\begin{pmatrix}1, & 2, & -\frac{1}{2}\end{pmatrix}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}[htpb]
+  \begin{center}
+    \caption{GAUGE SUPERMULTIPLETS IN THE MSSM}
+    \label{tab:gaugesuper}
+    \begin{tabular}{lccccc}
+      \toprule
+      Names & spin 1/2 & spin 1 & $SU(3)_{C}, SU(2)_{L}, U(1)_{Y}$ \\
+      \midrule
+      gluino, gluon & $\tilde{g}$ & $g$ & $\begin{pmatrix}8, & 1, & 0\end{pmatrix}$ \\
+      winos, W bosons & $\tilde{W}^{\pm}$ $\tilde{W}^{0}$ & $W^{\pm}$ $W^{0}$ & $\begin{pmatrix}1, & 3, & 0\end{pmatrix}$ \\
+      binos, B boson & $\tilde{B}^{0}$ & $B^{0}$ & $\begin{pmatrix}1, & 1, & 0\end{pmatrix}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+

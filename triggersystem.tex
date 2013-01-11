@@ -1,0 +1,26 @@
+\section{Trigger System}
+\label{sec:triggersystem}
+%At the nominal LHC luminosity of $10^{34}$ \lumiunit, bunch crossings will occur every 25 ns, which would correspond to an interaction rate of approximately $40$ MHz.
+At the LHC design specifications, bunch crossings will occur every 25 ns. 
+This rate would correspond to an interaction rate of approximately $40$ MHz.
+Considering the complexity of the CMS detector, the bandwidth required to read and store data from every bunch crossing would be greater that one Petabit per second.
+In addition to the unrealistic requirements of storing every event, is the fact that the cross section for common QCD interactions is many orders of magnitude larger than that of ``interesting'' physics.
+These reasons lead to the obvious solution that there must be a system by which interesting events are kept, and common events are discarded.
+The CMS trigger system is designed with this task in mind and consists of a very fast first-level trigger (L1), and a  more complete high level trigger (HLT).
+
+The designed acceptance rate of the L1 trigger is $100$ kHz. 
+In order to achieve this the L1 trigger is comprised of custom electronics that are built into the subdetector subsystems.
+The latency of the L1 trigger is restricted to $3.2$ \microunit{s} and as such only information from the calorimeters and muon system are available, as the time constraint on reconstructing tracks is too great.
+Each subdetector system generates a set of trigger primitives, typically photon/electron objects, muons and jets with certain $E_{T}$ or $p_{T}$ thresholds.
+The L1 trigger also integrates global requirements such as sums over transverse energy ($E_{T}$) and missing transverse energy ($\met$) from the calorimeters.
+After a successful L1 trigger decision, the event is fed into memory pipelines for read out by the Data Acquisition System (DAQ) and ultimately the HLT.
+Unlike the L1 trigger which relies on fast dedicated hardware, the HLT is run in software on a farm of commercial computers.
+The acceptance rate of the HLT is required to be on the order of $100$ Hz giving room for more complex operations such as reconstructing tracks, but the time to analyze each collision remains tight.
+The HLT is made up of several ``paths'' that typically represent more complex versions/combinations of the L1 trigger primitives, such as a single photon with a given $E_{T}$ threshold or a muon and tau in coincidence.
+Running the HLT in software allows for a greater flexibility to meet changing demands based on requirements such as increasing luminosity, or even hints towards new physics.
+
+This analysis uses a cross trigger which requires both a muon and a hadronically decaying tau to be present in order to pass the HLT.
+The triggers used are all based upon a single muon L1 seed, then in the HLT path both a muon and a tau object are required to be present.
+In order to reduce rates as the luminosity increased over the 2011 running period, several different triggers were used throughout different run ranges. 
+The triggers used will be described in more detail in Chapter \ref{chap:analysis}.
+

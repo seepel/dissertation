@@ -1,0 +1,87 @@
+\subsection{Weak Interaction}
+\label{sec:weak}
+The theory of weak interactions was developed to explain the phenomenon of radioactive beta decay.
+Enrico Fermi first developed the theory to explain neutron beta decay, or the transformation of a neutron into a proton with the emission of an electron  and a neutrino.
+Fermi's construction of the theory was originally a contact theory, meaning that all fermions shared a common intersection vertex as can be seen in Figure \ref{fig:betadecaycontact}.
+The Hamiltonian of Fermi's theory for beta decay is given as:
+\begin{equation}
+\label{eqn:fermibetadecay}
+H = \frac{G_{\beta}}{\sqrt{2}}\left[\psibar_{p}\gamma_{\mu}(1- g_{A}\gammafive)\psi_{n}\right]\left[\psibar_{e}\gamma^{\mu}(1-\gammafive)\psi_{\nu}\right] + h.c.,
+\end{equation}
+where $G_{\beta}$ is the Fermi constant, $g_{A}$ is the relative fraction of the interaction, or coupling constant, and must be measured experimentally.
+In Equation \ref{eqn:fermibetadecay}, the inclusion of the helicity operator $(1-\gammafive)$ gives rise to the observation that the theory violates parity. 
+The parity violation of $(1-\gammafive)$  can be seen in the following relations between it and the left and right handed helicity states:
+\begin{equation}
+\begin{split}
+h = (1-\gammafive)/2, \\
+h\psi_{R} = \onehalf\psi_{R}, \\
+h\psi_{L} = -\onehalf\psi_{L}. 
+\end{split}
+\end{equation}
+Following the Hamiltonian presented in Equation \ref{eqn:fermibetadecay}, the amplitude for nuclear beta decay is given by:
+\begin{equation}
+M = \frac{G_{F}}{\sqrt{2}}\left[\overline{u}_{p}\gamma_{\rho}\frac{1-\gammafive}{2}u_{n}\right] \left[\overline{u}_{\nu_{e}}\gamma^{\rho}\frac{1-\gammafive}{2}u_{e}\right].
+\end{equation}
+The presence of $(1-\gammafive)$ essentially functions to eliminate terms with right handed helicity states.
+\begin{figure}[htpb]
+\begin{center}
+\begin{fmffile}{betadecaycontact} 	%one.mf will be created for this feynman diagram  
+\fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+\begin{fmfgraph*}(110,62) %Sets size of Diagram
+\fmfleft{i1}	%Sets there to be 2 sources 
+\fmfright{i2,o2,o1}    %Sets there to be 2  outputs
+\fmflabel{$n$}{i1} %Labels one of the left sources
+\fmflabel{$\nu$}{i2} %Labels one of the left sources
+\fmflabel{$p$}{o2} %Labels one of the right outputs
+\fmflabel{$e^{-}$}{o1} %Labels one of the right outputs
+\fmf{fermion}{i1,v1,i2} %Connects the sources with a vertex.
+\fmf{fermion}{i1,v1,o1} %Connects the sources with a vertex.
+\fmf{fermion}{i1,v1,o2} %Connects the sources with a vertex.
+\end{fmfgraph*}
+}
+\end{fmffile}
+\caption{Feynman diagram of neutron beta decay in Fermi's contact theory.}
+\label{fig:betadecaycontact}
+\end{center}
+\end{figure}
+
+Although quite successful in describing nuclear beta decay, Fermi's contact theory fails in describing scattering processes at higher energies.
+When applied in this scenario the cross section grows with energy. 
+The result is that for some energy, the probability for the interaction becomes greater than one, violating unitarity.
+A solution to this was developed by replacing the contact interaction with a massive intermediate gauge boson as can be seen in Figure \ref{fig:betadecay}.
+The amplitude for the process under this regime becomes:
+\begin{equation}
+M = - \left[\frac{g}{\sqrt{2}}\overline{u}_{u}\gamma_{\rho}\frac{1-\gammafive}{2}u_{d}\right] \frac{-g^{\rho\sigma} + \frac{q^{\rho}q^{\sigma}}{M_{W}^{2}}}{q^{2} - M_{W}^{2}}\left[\frac{g}{\sqrt{2}}\overline{u}_{\nu_{e}}\gamma_{\rho}\frac{1-\gammafive}{2}u_{e}\right].
+\end{equation}
+The propagator contains the term $\frac{1}{q^{2} - M_{W}^{2}}$ which can be shown to converge to the contact theory at the low energy limit:
+\begin{equation}
+\lim_{q/M_{W} \to 0} \frac{g^{2}}{8(q^{2} - M_{W}^{2})} = \frac{G_{F}}{\sqrt{2}}.
+\end{equation}
+The weakness of the interactions when compared to QED can be derived from the fact that unlike the photon the propogators in the weak interaction are massive.
+Like QED in Section \ref{sec:qed}, the weak interaction is also a gauge symmetry. 
+Unlike QED however, the group is $SU(2)_{L}$, the $L$ representing that left handed states are $SU(2)$ doublets, and right handed states are singlets.
+The $SU(2)$ group yields the three gauge bosons, $W^{\pm}$ and $Z^{0}$, of the weak force.
+There is however a problem in that adding massive gauge bosons breaks gauge invariance and leads to a non-renormalizable theory.
+This problem will be discussed in Sections \ref{sec:breaking} and \ref{sec:electroweak}.
+\begin{figure}[htpb]
+\begin{center}
+\begin{fmffile}{betadecay} 	%one.mf will be created for this feynman diagram  
+  \fmfframe(1,7)(1,7){ 	%Sets dimension of Diagram
+   \begin{fmfgraph*}(110,62) %Sets size of Diagram
+    \fmfleft{i1}	%Sets there to be 2 sources 
+    \fmfright{i2,o1,o2}    %Sets there to be 2  outputs
+    \fmflabel{$d$}{i1} %Labels one of the left sources
+    \fmflabel{$u$}{i2} %Labels one of the left sources
+    \fmflabel{$\overline{\nu}_{e}$}{o1} %Labels one of the right outputs
+    \fmflabel{$e^{-}$}{o2} %Labels one of the right outputs
+    \fmf{fermion}{i1,v1,i2} %Connects the sources with a vertex.
+    \fmf{fermion}{o1,v2,o2} %Connects the outputs with a vertex.
+    \fmf{photon,label=$W^{-}$}{v1,v2} %Labels the conneting line.
+   \end{fmfgraph*}
+  }
+\end{fmffile}
+\end{center}
+\caption{Feynman diagram of nuclear beta decay via a massive intermediate gauge boson $W^{-}$.}
+\label{fig:betadecay}
+\end{figure}
+

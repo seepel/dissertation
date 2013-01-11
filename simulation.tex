@@ -1,0 +1,50 @@
+\section{Simulation}
+\label{sec:simulation}
+Several Monte Carlo simulations are used to compare the data to theoretical expectations for both the signal and background processes.
+The simulated events are produced via the PYTHIA\cite{PYTHIA} or MADGRAPH\cite{MADGRAPH} event generators.
+These are software tools that generate simulations of the hard scattering parton events as seen at the LHC and the Tevatron. 
+They both use leading-order (LO) matrix elements.
+By interfacing POWHEG\cite{POWHEG} with PYTHIA one can combine the parton shower generator with next-to-leading-order (NLO) QCD computations, providing an accurate description of the event while taking into account initial and final state radiation.
+For samples which require the simulation of a tau lepton decay, the software package Tauola\cite{TAUOLA} is used.
+The Tauola software package uses the matrix elements specifically associated with tau lepton decays to provide an accurate simulation of the processes involved.
+A summary of the datasets used can be found in Tables \ref{tab:backgroundsimulations} and \ref{tab:signalsimulations} for background and signal processes respectively. 
+Once the event has been generated it is run through a detailed GEANT4 based simulation of the detector that produces simulated particle trajectories\cite{GEANT4}.
+In addition to particle trajectories, the detector simulation produces a set of simulated digitized signals that are then processed with the same reconstruction algorithms as are run on the data.
+
+\begin{table}[tpb]
+  \begin{center}
+    \caption{BACKGROUND SIMULATION DATASETS}
+    \label{tab:backgroundsimulations}
+    \begin{tabular}{lcc}
+      \toprule
+      Process & Event Generator & Integrated Luminosity [fb$^-1$]\\
+      \midrule
+      $Z / \gamma^{*} \rightarrow \tau\tau$ & POWHEG + PYTHIA & 12.2\\
+      $Z / \gamma^{*} \rightarrow \mu\mu$ & POWHEG + PYTHIA & 18.12\\
+      QCD multi-jet & PYTHIA & 0.2\\
+      $W+$ multi-jet $\rightarrow l\nu$ & MADGRAPH & 2.6\\
+      $WW$ & PYTHIA & 152\\
+      $WZ$ & PYTHIA & 406\\
+      $t\overline{t} +$ multi-jet & MADGRAPH & 22\\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[tpb]
+  \begin{center}
+    \caption{SIGNAL SIMULATION DATASETS}
+    \label{tab:signalsimulations}
+    \begin{tabular}{lc}
+      \toprule
+      Process & Event Generator \\
+      \midrule
+      $gg \rightarrow H$ & POWHEG + PYTHIA \\
+      $qq \rightarrow Hqq$ & POWHEG + PYTHIA \\
+      $gg \rightarrow A$ & PYTHIA \\
+      $gg \rightarrow Abb$ & PYTHIA \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+

@@ -1,0 +1,22 @@
+% higgsscalar.mf -- do not edit, generated automatically by dissertation.tex
+input feynmf
+require_RCS_revision "1.30";
+beginchar(1, 110*1.0pt#, 62*1.0pt#, 0);
+"feynmf: 1";
+LaTeX_unitlength:=1.0pt;
+subgraph (0, 0, w, h);
+vinit;
+pickup pencircle scaled thin;
+vbottom (__i, __o);
+vlabel ("$H$", __i);
+vlabel ("$H$", __o);
+vconnect ("dashes", __i, __v);
+vconnect ("dashes", __v, __o);
+vconnect ("dashes,right,tension=.7", __v, __v);
+vfreeze;
+vdraw;
+endsubgraph;
+endchar;
+% the end.
+end.
+endinput;

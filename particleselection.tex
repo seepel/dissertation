@@ -1,0 +1,155 @@
+\section{Particle Selection}
+\label{sec:particleselection}
+
+\subsection{Primary Vertex Selection}
+\label{sec:vertexselection}
+Reconstructed vertices are selected based on a set of parameters to ensure that the vertex is of high quality.
+The position of the vertex in the z-axis is required to lie in the range $-24 < z < 24$ cm and within $2$ cm in the transverse plane, both with respect to the nominal interaction point. 
+The vertex with the highest $p_{T}$ sum of all associated tracks is then chosen as the primary vertex with respect to the following particle selection.
+The vertex selection is summarized in Table \ref{tab:vertexselection}.
+
+\begin{table}[htpb]
+  \setlength{\capwidth}{0.9\textwidth}
+  \begin{small}
+  \begin{center}
+    \caption{VERTEX SELECTION}
+    \label{tab:vertexselection}
+    \begin{tabular}{lcc}
+      \toprule
+      Cut Name & Requirement \\
+      \midrule
+      $z$     & $-24 < z < 24$ cm \\
+      $r$     & $r < 2$ cm \\ 
+      $p_{T}$ & $p_{T}^{max}$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \end{small}
+\end{table}
+
+
+\subsection{Muon Selection}
+\label{sec:muonselection}
+The $p_{T}$ of the muon is required to be greater than $17$ GeV to ensure that the selected muon will be associated with a sufficient trigger acceptance.
+To ensure that the muon falls within the fiducial region of the muon system, the muon is required to fall within a pseudo-rapidity range of $-2.1 < \eta < +2.1$.
+Muons are required to have associated tracks reconstructed in both the inner tracker and muon systems. 
+After satisfying the acceptance requirements of $p_{T}$, $\eta$ and matching tracks, the muon kinematic distributions can be seen in the left hand side of Figure \ref{fig:muoncuts}
+To ensure that the inner track is well reconstructed, the track is required to have at least one valid reconstructed hit in the inner pixel tracker as well as at least one valid reconstructed hit in the outer silicon strip tracker. 
+A similar requirement is applied to the track in the muon system as it is required to have at least one valid hit. 
+To ensure that the tracks from the inner tracker and muon system are well matched the global fit is required to have a maximum $\chi^{2}/DOF$ of 10. 
+The transverse impact parameter ($d_{0}$) is required to be less than $0.045$ cm as measured with respect to the selected primary vertex.
+\begin{figure}[ht]
+\centering
+\includeleptoncutplot{leptonSelection}{04_afterEvtSelMuonPt_beforeEvtSelTauAntiOverlapWithMuonsVeto}{muon}{Pt}{log}
+\includeleptoncutplot{leptonSelection}{10_afterEvtSelMuonTrkIP_beforeEvtSelTauDecayModeFinding}{muon}{Pt}{log}
+
+\includeleptoncutplot{leptonSelection}{04_afterEvtSelMuonPt_beforeEvtSelTauAntiOverlapWithMuonsVeto}{muon}{Eta}{linear}
+\includeleptoncutplot{leptonSelection}{10_afterEvtSelMuonTrkIP_beforeEvtSelTauDecayModeFinding}{muon}{Eta}{linear}
+\caption{$p_{T}$ (top) and $\eta$ (bottom) distributions for muons after acceptance cuts (left) and after isolation and identification (right).}
+\label{fig:muoncuts}
+\end{figure}
+
+Muons are often produced in heavy quark decays which would arise from QCD multi-jet events. 
+Such events would present a very large background. 
+To combat this effect muons are required to be well isolated from other tracks and measured energy in the calorimeters.
+To ensure that the muon is well isolated an isolation variable is calculated by summing the $p_{T}$ of other particle candidates that meet the following requirements:
+\begin{itemize}
+\item Several different tracking algorithms are used in the event reconstruction. As such tracks that may be compitable with the muon are excluded from the isolation sum. This prevents the muon itself from accidentily being included.
+%\item The track of any additional candidate to be considered is compared to the track of the muon to ensure that the muon itself is excluded from the isolation sum. 
+\item Isolation candidates are required to have a track compatible with the selected vertex.
+\item Isolation candidates must fall within an isolation cone defined by a radius of $0.4$ in $\eta$-$\phi$ space around the muon.
+\item Charged candidates are only considered if the candidate's $p_{T}$ is greater than $1$ GeV and the candidate does not lie within a veto-cone of radius $0.001$ around the muon.
+\item All neutral and photon candidates are included in the isolation sum regardless of their $p_{T}$, however, these candidates are excluded if they lie within a veto-cone of radius $0.01$ around the muon.
+\end{itemize}
+In addition to the previously defined isolation sum, a correction ($\Delta\beta$) is applied to account for energy left by additional neutral particles associated with pile-up affects.
+The $\Delta\beta$ correction is calculated by summing the $p_{T}$ of any charged candidates within the isolation cone that do not meet the primary vertex selection.
+This $p_{T}$ sum is then corrected with a ratio of 2:1 to account for the average number of neutral candidates with respect to the charged candidates.
+The final isolation sum is then calculated by summing the $p_{T}$ of the charged candidates, the $E_{T}$ of the neutral and photon candidates with the $\Delta\beta$ correction being subtracted from the sum if it is positive.
+A relative isolation for the muon is calculated by taking the ratio of the isolation sum to the $p_{T}$ of the muon as shown in:
+\begin{equation}
+I_{rel} = \frac{\Sigma p_{T}(charged) + \Sigma E_{T}(neutral) + \Sigma E_{T}(photon) - \max(0,\Delta\beta)}{p_{T}(muon)}
+\end{equation}
+Kinematic distributions for muons satisfying identification and isolation requirements can be seen in the right hand side of Figure \ref{fig:muoncuts}.
+
+\begin{table}[tpb]
+  \setlength{\capwidth}{0.9\textwidth}
+  \begin{small}
+  \begin{center}
+    \caption{MUON SELECTION}
+    \label{tab:muonselection}
+    \begin{tabular}{lcc}
+      \toprule
+      Cut Name & Requirement \\
+      \midrule
+      Transverse Momentum & $p_{T} > 17$ GeV \\
+      Pseudo-rapidity & $-2.1 < \eta < 2.1$ \\
+      Global Muon & Inner Track matching muon track \\
+      $\chi^{2}$ & $\chi^{2}/DOF < 10$ \\
+      Impact parameter & $d_{0} < 0.045$ cm \\
+      Relative Isolation & $I_{rel} < 0.3$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \end{small}
+\end{table}
+
+
+\subsection{Tau Selection}
+\label{sec:tauselection}
+In order to ensure that the selected taus are also within the high efficiency range of the trigger they are required to have a $p_{T} > 20$ GeV and are restricted to a range in pseudo-rapidity of  $-2.5 < \eta < 2.5$. 
+This ensures that the selected tau is in the fiducial region of the tracker, while limiting background contributions from QCD events in the forward detector.
+Kinematic distributions for the tau leptons after acceptance selection can be seen in the left hand side of Figure \ref{fig:taucuts}
+The identification and isolation of tau candidates is done using the Hadron Plus Strips (HPS) algorithm\cite{HPS}.
+This algorithm constructs a tau object by combining charged hadron particle flow candidates with particle flow photon candidates in $\eta$ strips around the charged hadrons.
+Taus typically decay into a single charged hadron (one prong) along with an additional zero or more neutral pions, or into three hadrons (three prong).
+The HPS tau is required to have one of the following decay modes:
+\begin{itemize}
+\item Single Hadron
+\item Hadron Plus One Strip
+\item Hadron Plus Two Strips
+\item Three Hadrons
+\end{itemize}
+To discriminate HPS taus from other jet objects an isolation requirement is applied by summing the $p_{T}$ of charged hadron candidates and the $E_{T}$ of photon candidates in a cone of radius $0.5$ in $\eta$-$\phi$ space around the tau.
+In order to discriminate taus from muons a dedicated discriminant is used such that the highest $p_{T}$ charged hadron track is required not to be reconstructed as a muon.
+It is also required that the ratio of the associated energy left in the HCAL to the transverse momentum is greater than $0.2$, in order to veto against minimally ionizing particles in the case that the tau has only a single hadron. 
+To discriminate tau candidates from electrons a multivariate analysis (MVA) based electron pre-identification is applied using the electron $E/p$ and other calorimeter information with respect to the leading track.
+%The muon discriminant used is 
+A final anti-overlap veto ($\Delta R > 0.3$) is applied to the selected tau to protect against the same hits in the tracker being reconstructed as both a charged hadron candidate and a muon track.
+Kinematic distributions for the tau leptons after identification and isolation requirements can be seen in the right hand side of Figure \ref{fig:taucuts}.
+\begin{figure}[ht]
+\centering
+\includeleptoncutplot{leptonSelection}{07_afterEvtSelTauPt_beforeEvtSelMuonVbTfid}{tau}{Pt}{log}
+\includeleptoncutplot{leptonSelection}{14_afterEvtSelTauElectronVeto_beforeEvtSelDiTauCandidateForMuTauAntiOverlapVeto}{tau}{Pt}{log}
+
+\includeleptoncutplot{leptonSelection}{07_afterEvtSelTauPt_beforeEvtSelMuonVbTfid}{tau}{Eta}{linear}
+\includeleptoncutplot{leptonSelection}{14_afterEvtSelTauElectronVeto_beforeEvtSelDiTauCandidateForMuTauAntiOverlapVeto}{tau}{Eta}{linear}
+\caption{$p_{T}$ (top) and $\eta$ (bottom) distributions for taus after acceptance cuts (left) and after particle identification and isolation (right).}
+\label{fig:taucuts}
+\end{figure}
+
+
+\subsection{Jet Selection}
+\label{sec:jetselection}
+Jets are used in order to classify events into categories designed to differentiate between events arising from different Higgs production mechanisms. 
+Jets are reconstructed using the particle flow candidates and the anti-$k_{T}$ algorithm\cite{ANTIKT} with an opening of $R = 0.5$. 
+A series of jet cleaning and identification cuts are first applied to any selected jets, these cuts include:
+\begin{itemize}
+\item Neutral Hadron Fraction $< 0.99$
+\item Neutral EM Fraction $< 0.99$
+\item Number of Constituents $> 1$
+\item Charged Hadron Fraction $> 0$
+\item Charged Multiplicity $> 0$
+\item Charged EM Fraction $< 0.99$
+\end{itemize}
+In order to exclude selected leptons from the jet selection, jets are required to be separated by a $\Delta R$ of at least 0.5 in $\eta$-$\phi$ space from any selected muon or tau.
+In order to determine if a jet originated from a bottom quark, a B-Tag requirement is checked.
+This is done using the Track Counting High Efficiency discriminant, tracks that have a value for this discriminant ($d_{TCHE} > 3.3$) are considered to be B-Tagged\cite{BTV_10_001}.
+
+\subsection{Missing Transverse Energy}
+\label{sec:metselection}
+Neutrinos interact only weakly, as such they will not interact with any of the sub-detectors as described in Chapter \ref{chap:detector}.
+Rather than direct detection the presence of neutrinos is inferred via the concept of missing transverse energy ($\met$).
+To calculate the $\met$, the total transverse energy ($E_{T}$) of all particle flow candidates is summed.
+The momentum of the incident partons will be nearly parallel with the beam pipe, as such the energy in the transverse plane is expected to be very nearly balanced.
+If all transverse energy is not accounted for, the $E_{T}$ sum will be non-zero and the resulting $\met$ is calculated to make up the discrepancy.
+The $\met$ is useful in discriminating against events with W bosons or $t\overline{t}$ pairs, and is used in calculating the di-tau invariant mass distribution.
